@@ -1,4 +1,5 @@
 import { BASE_URL } from "./config.js";
+import { getStoredApiKey } from "./store.js";
 
 interface ApiResponse<T> {
   code: number;
@@ -7,10 +8,10 @@ interface ApiResponse<T> {
 }
 
 export const getApiKey = (): string => {
-  const key = process.env.KIE_API_KEY;
+  const key = process.env.KIE_API_KEY || getStoredApiKey();
   if (!key) {
-    console.error("Error: KIE_API_KEY environment variable is required.");
-    console.error("Set it with: export KIE_API_KEY=your_api_key");
+    console.error("Error: No API key found.");
+    console.error("Set it with: kie auth <your-api-key>");
     process.exit(1);
   }
   return key;

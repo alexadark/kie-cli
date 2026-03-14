@@ -19,8 +19,14 @@ npm install -g kie-cli
 ## Setup
 
 ```bash
-export KIE_API_KEY=your_api_key
+# Set your API key (interactive, masked input)
+kie auth
+
+# Verify current key
+kie auth --show
 ```
+
+The key is stored in `~/.config/kie/config.json`. The `KIE_API_KEY` environment variable can also be used and takes priority over the stored key.
 
 ## Quick Start
 
@@ -71,6 +77,10 @@ Generate an image or video.
 | `--google-search`    | Google search grounding (nano-banana) | off     |
 | `--callback`         | Webhook callback URL                  | -       |
 | `-w, --wait`         | Poll until generation completes       | off     |
+
+### `kie auth`
+
+Set your API key interactively (masked input). Use `--show` to view current key status. Stored in `~/.config/kie/config.json`.
 
 ### `kie status <taskId>`
 
