@@ -37,7 +37,7 @@ export const registerUpscaleCommand = (program: Command): void => {
               console.log(`  ${i + 1}. ${url}`),
             );
           } else if (result.taskId && opts.wait) {
-            await pollTask(result.taskId);
+            await pollTask(result.taskId, "upscale", "veo3");
           } else {
             console.log(chalk.dim(`  Check status: kie status ${taskId}`));
           }

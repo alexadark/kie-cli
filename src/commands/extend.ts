@@ -30,7 +30,7 @@ export const registerExtendCommand = (program: Command): void => {
           console.log(chalk.green("Extension task created:"), result.taskId);
 
           if (opts.wait) {
-            await pollTask(result.taskId);
+            await pollTask(result.taskId, prompt, "veo3");
           } else {
             console.log(
               chalk.dim(`\n  Check status: kie status ${result.taskId}`),

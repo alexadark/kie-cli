@@ -1,4 +1,4 @@
-export type Provider = "kling" | "veo3" | "nano-banana";
+export type Provider = "kling" | "veo3" | "nano-banana" | "midjourney";
 
 export interface GenerateOptions {
   provider: Provider;
@@ -17,6 +17,12 @@ export interface GenerateOptions {
   seed?: number;
   googleSearch?: boolean;
   mode?: string;
+  // MidJourney specific
+  stylization?: number;
+  weirdness?: number;
+  variety?: number;
+  speed?: string;
+  version?: string;
 }
 
 export interface ProviderRequest {
@@ -31,15 +37,11 @@ export interface TaskResponse {
 
 export interface KlingTaskStatus {
   taskId: string;
-  status: string;
-  works?: Array<{
-    workId: string;
-    status: string;
-    resource: {
-      resourceType: string;
-      resource: string;
-    };
-  }>;
+  state: string;
+  resultJson?: string;
+  failCode?: string;
+  failMsg?: string;
+  costTime?: number;
 }
 
 export interface Veo3TaskStatus {
@@ -53,6 +55,16 @@ export interface Veo3TaskStatus {
     resultUrls?: string[];
     originUrls?: string[];
     resolution?: string;
+  };
+}
+
+export interface MjTaskStatus {
+  taskId: string;
+  successFlag: number;
+  errorCode?: string | null;
+  errorMessage?: string | null;
+  resultUrls?: {
+    resultUrls?: Array<{ resultUrl: string }>;
   };
 }
 

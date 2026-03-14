@@ -11,11 +11,12 @@
 
 ### Kling
 
-| Setting      | Default                | Options                             |
-| ------------ | ---------------------- | ----------------------------------- |
-| Model        | `kling-2.6` (standard) | All v2.1, v2.5, v2.6, v3.0 variants |
-| Aspect Ratio | `9:16`                 | `16:9`, `1:1`                       |
-| Resolution   | standard               | pro, master                         |
+| Setting      | Default           | Options                             |
+| ------------ | ----------------- | ----------------------------------- |
+| Model        | `kling-3.0/video` | All v2.1, v2.5, v2.6, v3.0 variants |
+| Aspect Ratio | `9:16`            | `16:9`, `1:1`                       |
+| Duration     | `10`              | `3`-`15` seconds                    |
+| Mode         | `std` (720p)      | `pro` (1080p)                       |
 
 ### Veo 3
 
